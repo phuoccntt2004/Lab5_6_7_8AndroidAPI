@@ -257,9 +257,9 @@ public class HomeActivity extends AppCompatActivity implements FruitAdapter.Frui
     }
 
     @Override
-    public void showDetail(Fruit fruit) {
-        Intent intent =new Intent(HomeActivity.this, FruitDetailActivity.class);
-        intent.putExtra("fruit", fruit);
+    public void addCart(Fruit fruit) {
+        Intent intent =new Intent(HomeActivity.this, LocationActivity.class);
+        intent.putExtra("item", fruit);
         startActivity(intent);
 
     }

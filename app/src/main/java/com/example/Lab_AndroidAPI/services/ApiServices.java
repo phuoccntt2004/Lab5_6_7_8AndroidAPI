@@ -2,6 +2,7 @@ package com.example.Lab_AndroidAPI.services;
 
 import com.example.Lab_AndroidAPI.model.Distributor;
 import com.example.Lab_AndroidAPI.model.Fruit;
+import com.example.Lab_AndroidAPI.model.Order;
 import com.example.Lab_AndroidAPI.model.Page;
 import com.example.Lab_AndroidAPI.model.Response;
 import com.example.Lab_AndroidAPI.model.User;
@@ -28,7 +29,7 @@ import retrofit2.http.QueryMap;
 
 public interface ApiServices {
 
-    public static String IP = "172.16.49.197";
+    public static String IP = "172.16.52.90";
     public static String BASE_URL = "http://"+IP+":3000/api/";
 
     @GET("get-list-distributor")
@@ -86,7 +87,8 @@ public interface ApiServices {
 
     @GET("get-fruit-by-id/{id}")
     Call<Response<Fruit>> getFruitById (@Path("id") String id);
-
+    @POST("add-order")
+    Call<Response<Order>> order (@Body Order order);
 
 
 

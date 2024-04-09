@@ -3,6 +3,7 @@ package com.example.Lab_AndroidAPI.adapter;
 import static com.example.Lab_AndroidAPI.services.ApiServices.IP;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import com.example.Lab_AndroidAPI.R;
 import com.example.Lab_AndroidAPI.databinding.ItemFruitBinding;
 import com.example.Lab_AndroidAPI.model.Distributor;
 import com.example.Lab_AndroidAPI.model.Fruit;
+import com.example.Lab_AndroidAPI.view.HomeActivity;
+import com.example.Lab_AndroidAPI.view.LocationActivity;
 
 import java.util.ArrayList;
 
@@ -34,7 +37,7 @@ public class FruitAdapter  extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
         void delete(Fruit fruit);
         void edit(Fruit fruit);
 
-        void showDetail(Fruit fruit);
+        void addCart(Fruit fruit);
     }
 
     @NonNull
@@ -71,6 +74,10 @@ public class FruitAdapter  extends RecyclerView.Adapter<FruitAdapter.ViewHolder>
             public void onClick(View v) {
                 fruitClick.delete(fruit);
             }
+        });
+        holder.binding.btnCart.setOnClickListener(v->{
+            fruitClick.addCart(fruit);
+
         });
 
     }
