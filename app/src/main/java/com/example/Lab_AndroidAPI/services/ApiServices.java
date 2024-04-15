@@ -29,7 +29,7 @@ import retrofit2.http.QueryMap;
 
 public interface ApiServices {
 
-    public static String IP = "172.16.52.90";
+    public static String IP = "192.168.88.150";
     public static String BASE_URL = "http://"+IP+":3000/api/";
 
     @GET("get-list-distributor")

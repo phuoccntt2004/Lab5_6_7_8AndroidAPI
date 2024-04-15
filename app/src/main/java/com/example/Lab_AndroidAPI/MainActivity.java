@@ -24,6 +24,7 @@ import com.example.Lab_AndroidAPI.adapter.DistributorAdapter;
 import com.example.Lab_AndroidAPI.model.Distributor;
 import com.example.Lab_AndroidAPI.model.Response;
 import com.example.Lab_AndroidAPI.services.HttpRequest;
+import com.example.Lab_AndroidAPI.view.HomeActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private DistributorAdapter adapter;
     private FloatingActionButton btnAdd;
     private TextInputEditText edtSearch;
+    private Button btnFruit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         btnAdd = findViewById(R.id.floatingBtn);
         edtSearch = findViewById(R.id.edtSearch);
+        btnFruit = findViewById(R.id.btnFruit);
         request = new HttpRequest();
         request.callAPI()
                 .getListDistributor()
@@ -54,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(v -> {
             showDialog();
         });
+        btnFruit.setOnClickListener(v->{
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+        });
+
         edtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

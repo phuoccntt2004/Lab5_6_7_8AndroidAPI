@@ -125,6 +125,7 @@ public class LocationActivity extends AppCompatActivity {
             if (response.isSuccessful()) {
                 if (response.body().getCode() == 200) {
                     ArrayList<Province> ds = new ArrayList<>(response.body().getData());
+                    Log.d("dong128", "onResponse: "+ds.size());
                     SetDataSpinProvince(ds);
                 }
             }

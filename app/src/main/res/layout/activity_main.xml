@@ -10,6 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/btnFruit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/resource_background_button"
+            android:text="Fruit"/>
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtSearch"
             android:layout_width="match_parent"
@@ -26,6 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true" />
+
     </LinearLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingBtn"
@@ -37,5 +44,6 @@
         android:backgroundTint="#49D8EA"
         android:src="@drawable/baseline_add_24"
         android:layout_marginBottom="60dp"/>
+
 
 </RelativeLayout>
